@@ -54,7 +54,7 @@ elsif defined?(RightAws)
   #puts "Using \'aws/s3\' gem as Amazon S3 interface."
   def HerokuMongoBackup::s3_connect(bucket, key, secret)
     service = RightAws::S3.new(key, secret, :server => 's3-us-east-1.amazonaws.com')
-    bucket = service.bucket(bucket_name, false, nil, :location => 'us-east-1')
+    bucket = service.bucket(bucket, false, nil, :location => 'us-east-1')
     return bucket
   end
   def HerokuMongoBackup::s3_upload(bucket, filename)
